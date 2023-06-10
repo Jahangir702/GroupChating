@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+<style>
+	*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	}
+	.container{
+		width: 650px;
+		margin:20px auto;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+	<canvas width="650px" height="230px" id="canvas">
+		No canvas Support
+	</canvas>
+<script>
+	var ctx = document.getElementById('canvas').getContext('2d');
+	if(ctx){
+		ctx.fillStyle='rgba(0,0,0,.05)'
+		ctx.fillRect(0,0,650,230);
+		let l1 = ctx.createLinearGradient(10, 110, 210, 10);
+		l1.addColorStop(0, 'red');
+		l1.addColorStop(.2, 'blue');
+		l1.addColorStop(.5, 'yellow');
+		l1.addColorStop(1, 'green');
+		ctx.fillStyle= l1;
+		ctx.fillRect(10, 120, 200, 100);
+	}
+</script>
+</div>
+</body>
+</html>
